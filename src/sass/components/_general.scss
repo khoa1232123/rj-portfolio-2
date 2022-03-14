@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css");
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Be Vietnam Pro", sans-serif;
+
+  background-color: var(--bg-color-1);
+  color: var(--white);
+}
+
+.container-fluid {
+  padding: 0 var(--iko-col);
+}
+
+.title {
+  * {
+    margin-bottom: 10px;
+    text-align: center;
+    color: var(--white);
+  }
+
+  &__sub {
+    font-size: 14px;
+  }
+
+  &__main {
+    font-size: 28px;
+    color: var(--blue);
+  }
+
+  &__desc {
+    font-size: 14px;
+    opacity: 0.8;
+  }
+}
+
+.box-icon {
+  @include flex(center, flex-start);
+  margin-bottom: 30px;
+
+  &__icon {
+    width: 20%;
+    text-align: center;
+
+    i {
+      color: var(--color-title);
+    }
+  }
+
+  &__title {
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  &__desc {
+    font-size: 90%;
+    opacity: 0.8;
+  }
+}
+
+.navbar {
+  background: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px;
+  display: flex;
+  border-radius: 50px;
+  backdrop-filter: blur(15px);
+  z-index: 99;
+
+  a {
+    padding: 20px;
+    display: inline-block;
+    border-radius: 50px;
+    min-width: 60px;
+
+    &.active {
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    ~ a {
+      margin-left: 5px;
+    }
+  }
+}
+
+.iko-input textarea.iko-input__input {
+  padding: 10px;
+  height: 150px;
+}
+
+.iko-input input.iko-input__input,
+.iko-input textarea.iko-input__input {
+  color: var(--white);
+  border-color: var(--color-title);
+
+  &:not(:placeholder-shown),
+  &:focus {
+    + .iko-input__label__effect {
+      top: -10px;
+      font-size: 14px;
+      background-color: var(--bg-color-1);
+      opacity: 1;
+      z-index: 1;
+    }
+  }
+}
